@@ -19,16 +19,29 @@
   <div class="container-fluid">
     <div class="card mx-auto" style="width: 25rem;">
       <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <div class="card-body text-center">
+        <h5 class="card-title" id="city-title"></h5>
+        <h5 class="card-title"><span id="city-temp"></span> <span id="city-unity"></span></h5>
+        <p class="card-text" id="city-description"></p>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Vestibulum at eros</li>
-        <li class="list-group-item">Vestibulum at eros</li>
+        <li class="list-group-item"><span id="city-humidity"></span></li>
+        <li class="list-group-item"><span id="city-pressure"></span></li>
+        <li class="list-group-item"><span id="city-tempmin"></span></li>
+        <li class="list-group-item"><span id="city-tempmax"></span></li>
       </ul>
+      <div class="card-body d-flex justify-content-around">
+        <div class="sunrise-cont d-flex flex-column text-center">
+          <li class="list-group-item" id="sunrise-time"></li>
+          <i class="far fa-sun display-4"></i>
+          <li class="list-group-item">Sunrise</li>
+        </div>
+        <div class="sunrise-cont d-flex flex-column text-center">
+          <li class="list-group-item" id="sunset-time"></li>
+          <i class="fas fa-sun display-4"></i>
+          <li class="list-group-item">Sunset</li>
+        </div>
+      </div>
       <div class="card-body d-flex justify-content-around">
         <a href="#" class="card-link">Card link</a>
         <a href="#" class="card-link">Another link</a>
@@ -41,5 +54,7 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <!-- FontAwesome Component -->
+  <script src="https://kit.fontawesome.com/b8f781cebc.js" crossorigin="anonymous"></script>
 </body>
 </html>
