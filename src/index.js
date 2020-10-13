@@ -14,11 +14,17 @@ searchButton.addEventListener('click', async (e) => {
 const getCityData = async (city) => {
   let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=590be985d863c65642e5fbf9e410de56`);
   let data = await response.json();
-  return tempFar(data.main.temp);
+  return displayInfo(data);
 }
 
-const tempFar = (temp) => {
-  open.textContent = temp;
+const displayInfo = (data) => {
+  document.getElementById('city-title').textContent = `${data.name}, ${data.sys.country}`;
+  document.getElementById('city-temp').textContent = data.main.temp;
+  document.getElementById('city-description').textContent = data.weather[0].description;
+  document.getElementById('city-humidity').textContent = data.main.humidity;
+  document.getElementById('city-pressure').textContent = data.main.pressure;
+  document.getElementById('city-tempmin').textContent = data.main.temp_min;
+  document.getElementById('city-tempmax').textContent = data.main.temp_max;
 }
 
 const tempCen = (temp) => {
