@@ -1,15 +1,29 @@
 const fetch = require('node-fetch');
 
 const API_KEY = '590be985d863c65642e5fbf9e410de56';
-const open = document.querySelector('.texto');
 const searchButton = document.getElementById('search');
 const fahrenheitButton = document.getElementById('fahrenheit');
-const fahrenheitButton = document.getElementById('celsius');
+const celsiusButton = document.getElementById('celsius');
 
 fahrenheitButton.addEventListener('click', async () => {
   const newcity = document.getElementById('city-title').textContent;
   const callFar = await toggleMetric('imperial', newcity);
 })
+
+celsiusButton.addEventListener('click', async () => {
+  const newcityCel = document.getElementById('city-title').textContent;
+  const callCel = await toggleMetric('metric', newcityCel);
+})
+
+const toggleColor = (metric) => {
+  if (metric == 'imperial') {
+    fahrenheitButton.classList.replace('btn-secondary', 'btn-success');
+    celsiusButton.classList.replace('btn-success', 'btn-secondary');
+  } else {
+    celsiusButton.classList.replace('btn-secondary', 'btn-success');
+    fahrenheitButton.classList.replace('btn-success', 'btn-secondary');
+  }
+}
 
 searchButton.addEventListener('click', async () => {
   const city = document.getElementById('inlineFormInputName2').value;
@@ -34,6 +48,7 @@ const checkMetric = (metric) => {
 const displayInfo = (data, metric) => {
   var fullSunrise = new Date(data.sys.sunrise * 1000);
   var fullSunset = new Date(data.sys.sunset * 1000);
+  toggleColor(metric);
   document.getElementById('city-title').textContent = `${data.name}, ${data.sys.country}`;
   document.getElementById('city-temp').textContent = `${data.main.temp} ${checkMetric(metric)}`;
   document.getElementById('city-description').textContent = data.weather[0].description;
