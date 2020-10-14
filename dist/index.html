@@ -3,23 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <title>Document</title>
 </head>
 <body>
-  <div class="search-cont d-flex align-items-center">
-    <form class="form-inline">
-      <label class="sr-only" for="inlineFormInputName2">Name</label>
-      <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="City Name">
-    </form>
-    <button id="search" class="btn btn-secondary">Este es</button>
-  </div>
-  <div class="container">
-    <h1 class="texto"></h1>
-  </div>
-  <div class="container-fluid mb-5">
-    <div class="card mx-auto" style="width: 25rem;">
-      <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80" class="card-img-top" alt="...">
+  <div class="container-fluid mb-5 mt-5 d-flex align-items-center">
+    <div class="card" style="width: 30%;">
+      <img id="icon-image" class="card-img-top" alt="...">
       <div class="card-body text-center">
         <h5 class="card-title" id="city-title"></h5>
         <h5 class="card-title"><span id="city-temp"></span> <span id="city-unity"></span></h5>
@@ -46,6 +37,22 @@
       <div class="card-body d-flex justify-content-around">
         <button type="button" class="btn btn-secondary" id="celsius">Celsius</button>
         <button type="button" class="btn btn-secondary" id="fahrenheit">Farenheit</button>
+      </div>
+    </div>
+    <div class="buttons d-flex flex-column align-items-center" style="width: 70%;">
+      <div class="first mx-auto mb-5">
+        <div class="search-cont d-flex align-items-center flex-column">
+          <form class="form-inline">
+            <label class="sr-only" for="inlineFormInputName2">Name</label>
+            <input type="text" class="form-control mb-2 mr-sm-3" id="inlineFormInputName2" placeholder="City Name">
+          </form>
+          <button id="search" class="btn btn-secondary text-uppercase">Search</button>
+        </div>
+      </div>
+      <div class="second mx-auto mt-5" style="width: 80%;">
+        <div class="mx-auto">
+          <img id="image-body" class="mx-auto d-none" alt="City-Image">
+        </div>
       </div>
     </div>
   </div>

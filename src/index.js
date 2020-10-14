@@ -6,7 +6,8 @@ const API_KEY = '590be985d863c65642e5fbf9e410de56';
 const searchButton = document.getElementById('search');
 const fahrenheitButton = document.getElementById('fahrenheit');
 const celsiusButton = document.getElementById('celsius');
-const mainDOM = document.querySelector('body');
+const mainDOM = document.querySelector('#image-body');
+const mainICO = document.querySelector('#icon-image')
 
 fahrenheitButton.addEventListener('click', async () => {
   const newcity = document.getElementById('city-title').textContent;
@@ -53,8 +54,12 @@ searchButton.addEventListener('click', async () => {
 
 const getImage = async (city) => {
   let response = await unsplashApi.getImageBySearch(city);
-  mainDOM.style.backgroundImage = `url(${response.url})`;
-  console.log(response.url)
+  mainDOM.classList.replace('d-none', 'd-block');
+  mainDOM.src = response.url;
+}
+
+const setIcon = (data) => {
+  mainICO.src = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`
 }
 
 const toggleMetric = async (metric, city) => {
@@ -75,6 +80,7 @@ const displayInfo = (data, metric) => {
   var fullSunrise = new Date(data.sys.sunrise * 1000);
   var fullSunset = new Date(data.sys.sunset * 1000);
   toggleColor(metric);
+  mainICO.src = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`
   document.getElementById('city-title').textContent = `${data.name}, ${data.sys.country}`;
   document.getElementById('city-temp').textContent = `${data.main.temp} ${checkMetric(metric)}`;
   document.getElementById('city-description').textContent = data.weather[0].description;
