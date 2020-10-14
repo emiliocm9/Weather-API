@@ -1,4 +1,4 @@
-import { fetch, mainDOM } from './constants';
+import { mainDOM } from './constants';
 
 const unsplashApi = (() => {
   const apiHost = 'https://source.unsplash.com/1600x900';
@@ -13,9 +13,13 @@ const unsplashApi = (() => {
 })();
 
 const getImage = async (city) => {
-  const response = await unsplashApi.getImageBySearch(city);
-  mainDOM.classList.replace('d-none', 'd-block');
-  mainDOM.src = response.url;
+  try {
+    const response = await unsplashApi.getImageBySearch(city);
+    mainDOM.classList.replace('d-none', 'd-block');
+    mainDOM.src = response.url;
+  } catch (error) {
+    console.table(error);
+  }
 };
 
 export default getImage;

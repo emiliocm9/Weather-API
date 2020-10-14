@@ -1,5 +1,5 @@
 import {
-  fetch, fahrenheitButton, celsiusButton, mainICO, API_KEY,
+  fahrenheitButton, celsiusButton, mainICO, API_KEY,
 } from './constants';
 
 const toggleColor = (metric) => {

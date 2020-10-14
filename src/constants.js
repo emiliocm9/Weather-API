@@ -1,5 +1,3 @@
-/* global require */
-export var fetch = require('node-fetch');
 export const API_KEY = '590be985d863c65642e5fbf9e410de56';
 export const searchButton = document.getElementById('search');
 export const fahrenheitButton = document.getElementById('fahrenheit');

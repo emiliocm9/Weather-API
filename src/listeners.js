@@ -6,7 +6,7 @@ const clickFahrenheit = async () => {
     const newcity = document.getElementById('city-title').textContent;
     toggleMetric('imperial', newcity);
   } catch (error) {
-    console.log(error);
+    console.table(error);
   }
 };
 
@@ -15,7 +15,7 @@ const clickCelsius = async () => {
     const newcityCel = document.getElementById('city-title').textContent;
     toggleMetric('metric', newcityCel);
   } catch (error) {
-    console.log(error);
+    console.table(error);
   }
 };
 
@@ -26,7 +26,7 @@ const clickSearch = async () => {
     toggleMetric('metric', city);
     document.getElementById('inlineFormInputName2').value = '';
   } catch (error) {
-    console.log(error);
+    console.table(error);
   }
 };
 
