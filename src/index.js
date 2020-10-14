@@ -1,9 +1,12 @@
+import unsplashApi from './photo';
+
 const fetch = require('node-fetch');
 
 const API_KEY = '590be985d863c65642e5fbf9e410de56';
 const searchButton = document.getElementById('search');
 const fahrenheitButton = document.getElementById('fahrenheit');
 const celsiusButton = document.getElementById('celsius');
+const mainDOM = document.querySelector('body');
 
 fahrenheitButton.addEventListener('click', async () => {
   const newcity = document.getElementById('city-title').textContent;
@@ -27,12 +30,35 @@ const toggleColor = (metric) => {
 
 searchButton.addEventListener('click', async () => {
   const city = document.getElementById('inlineFormInputName2').value;
+  const repo = await getImage(city);
   const call = await toggleMetric('metric', city);
   document.getElementById('inlineFormInputName2').value = '';
 });
 
+
+/* const searchForCity = (city) => {
+  mainLoader.style.display = 'block';
+
+  UnsplashApi.getImageBySearch(city).then((response) => {
+    mainDOM.style.backgroundImage = `url(${response.url})`;
+    mainLoader.style.display = 'none';
+    OpenWeatherApi.getWeatherByCity(city, degreeUnit).then((weather) => {
+      updateWeather(weather);
+    }).catch((err) => {
+      errorMessage.style.display = 'block';
+      errorMessage.textContent = err.message;
+    });
+  });
+}; */
+
+const getImage = async (city) => {
+  let response = await unsplashApi.getImageBySearch(city);
+  mainDOM.style.backgroundImage = `url(${response.url})`;
+  console.log(response.url)
+}
+
 const toggleMetric = async (metric, city) => {
-  let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${metric}&appid=590be985d863c65642e5fbf9e410de56`);
+  let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${metric}&appid=${API_KEY}`);
   let data = await response.json();
   return displayInfo(data, metric);
 }
