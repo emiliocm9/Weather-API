@@ -13,13 +13,14 @@ This is a Weather Report web-page built using Webpack, JavaScript ES6 and OpenWe
 - CSS
 - JavaScript
 - Webpack
-- OpenWeather API
+- ![OpenWeather API](https://openweathermap.org/)
+- ![Unsplash API](https://unsplash.com/developers)
 
 ## Live Demo
 
 - Github Website.
 
-You can click on this [link](https://emiliocm9.github.io/RestaurantPage_JavaScript/)
+You can click on this [link](https://emiliocm9.github.io/Weather-API/dist/)
 
 
 ## Getting Started
@@ -43,7 +44,7 @@ To get a local copy up and running follow these simple example steps.
 
 To deploy this repo, I used Github Pages.
 
-> You can access to the deployed app following this [link](https://emiliocm9.github.io/RestaurantPage_JavaScript/)
+> You can access to the deployed app following this [link](https://emiliocm9.github.io/Weather-API/dist/)
 
 ## Authors
 
