@@ -1,30 +1,18 @@
 import unsplashApi from './photo';
 
-const fetch = require('node-fetch');
-const API_KEY = '590be985d863c65642e5fbf9e410de56';
-const searchButton = document.getElementById('search');
-const fahrenheitButton = document.getElementById('fahrenheit');
-const celsiusButton = document.getElementById('celsius');
-const mainDOM = document.querySelector('#image-body');
-const mainICO = document.querySelector('#icon-image');
+export const fetch = require('node-fetch');
+export const API_KEY = '590be985d863c65642e5fbf9e410de56';
+export const searchButton = document.getElementById('search');
+export const fahrenheitButton = document.getElementById('fahrenheit');
+export const celsiusButton = document.getElementById('celsius');
+export const mainDOM = document.querySelector('#image-body');
+export const mainICO = document.querySelector('#icon-image');
 
-fahrenheitButton.addEventListener('click', async () => {
-  try {
-    const newcity = document.getElementById('city-title').textContent;
-    const callFar = await toggleMetric('imperial', newcity);
-  } catch {
-    alert("Error: there's no informationa available yet.")
-  }
-})
+fahrenheitButton.addEventListener('click', () => clickFahrenheit());
 
-celsiusButton.addEventListener('click', async () => {
-  try {
-    const newcityCel = document.getElementById('city-title').textContent;
-    const callCel = await toggleMetric('metric', newcityCel);
-  } catch {
-    alert("Error: there's no informationa available yet.")
-  }
-})
+celsiusButton.addEventListener('click', () => clickCelsius());
+
+searchButton.addEventListener('click', () => clickSearch());
 
 const toggleColor = (metric) => {
   if (metric == 'imperial') {
@@ -35,17 +23,6 @@ const toggleColor = (metric) => {
     fahrenheitButton.classList.replace('btn-success', 'btn-secondary');
   }
 }
-
-searchButton.addEventListener('click', async () => {
-  try {
-    const city = document.getElementById('inlineFormInputName2').value;
-    const repo = await getImage(city);
-    const call = await toggleMetric('metric', city);
-    document.getElementById('inlineFormInputName2').value = '';
-  } catch {
-    alert("Sorry: we couldn't find your city");
-  }
-});
 
 const getImage = async (city) => {
   let response = await unsplashApi.getImageBySearch(city);
