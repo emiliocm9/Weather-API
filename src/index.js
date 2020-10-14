@@ -1,7 +1,6 @@
 import unsplashApi from './photo';
 
 const fetch = require('node-fetch');
-
 const API_KEY = '590be985d863c65642e5fbf9e410de56';
 const searchButton = document.getElementById('search');
 const fahrenheitButton = document.getElementById('fahrenheit');
