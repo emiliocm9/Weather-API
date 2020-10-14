@@ -13,8 +13,8 @@ This is a Weather Report web-page built using Webpack, JavaScript ES6 and OpenWe
 - CSS
 - JavaScript
 - Webpack
-- ![OpenWeather API](https://openweathermap.org/)
-- ![Unsplash API](https://unsplash.com/developers)
+- [OpenWeather API](https://openweathermap.org/)
+- [Unsplash API](https://unsplash.com/developers)
 
 ## Live Demo
 
