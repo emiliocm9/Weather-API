@@ -1,5 +1,12 @@
-import { getImage } from './photo';
+import getImage from './photo';
 import { toggleMetric } from './display';
+
+var originalConsole = window.console;
+console = {
+    log: function(message) {
+        originalConsole.log(message);
+    }
+}
 
 const clickFahrenheit = async () => {
   try {

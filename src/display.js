@@ -1,5 +1,5 @@
 import {
-  fetch, fahrenheitButton, celsiusButton, mainICO, API_KEY
+  fetch, fahrenheitButton, celsiusButton, mainICO, API_KEY,
 } from './constants';
 
 const toggleColor = (metric) => {
@@ -26,8 +26,8 @@ const checkMetric = (metric) => {
 };
 
 const displayInfo = (data, metric) => {
-  let fullSunrise = new Date(data.sys.sunrise * 1000);
-  let fullSunset = new Date(data.sys.sunset * 1000);
+  const fullSunrise = new Date(data.sys.sunrise * 1000);
+  const fullSunset = new Date(data.sys.sunset * 1000);
   toggleColor(metric);
   setIcon(data);
   document.getElementById('city-title').textContent = `${data.name}, ${data.sys.country}`;
@@ -48,5 +48,5 @@ const toggleMetric = async (metric, city) => {
 };
 
 export {
-  displayInfo, checkMetric, toggleColor, toggleMetric, setIcon
+  displayInfo, checkMetric, toggleColor, toggleMetric, setIcon,
 };

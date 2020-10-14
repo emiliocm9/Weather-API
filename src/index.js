@@ -1,4 +1,4 @@
-import { eventsCaller } from './initial';
+import eventsCaller from './initial';
 import { searchButton } from './constants';
 
 eventsCaller();

@@ -12,8 +12,10 @@ const unsplashApi = (() => {
   return { getImageBySearch };
 })();
 
-export const getImage = async (city) => {
+const getImage = async (city) => {
   const response = await unsplashApi.getImageBySearch(city);
   mainDOM.classList.replace('d-none', 'd-block');
   mainDOM.src = response.url;
 };
+
+export default getImage;
