@@ -10,13 +10,21 @@ const mainDOM = document.querySelector('#image-body');
 const mainICO = document.querySelector('#icon-image');
 
 fahrenheitButton.addEventListener('click', async () => {
-  const newcity = document.getElementById('city-title').textContent;
-  const callFar = await toggleMetric('imperial', newcity);
+  try {
+    const newcity = document.getElementById('city-title').textContent;
+    const callFar = await toggleMetric('imperial', newcity);
+  } catch {
+    alert("Error: there's no informationa available yet.")
+  }
 })
 
 celsiusButton.addEventListener('click', async () => {
-  const newcityCel = document.getElementById('city-title').textContent;
-  const callCel = await toggleMetric('metric', newcityCel);
+  try {
+    const newcityCel = document.getElementById('city-title').textContent;
+    const callCel = await toggleMetric('metric', newcityCel);
+  } catch {
+    alert("Error: there's no informationa available yet.")
+  }
 })
 
 const toggleColor = (metric) => {
@@ -30,27 +38,15 @@ const toggleColor = (metric) => {
 }
 
 searchButton.addEventListener('click', async () => {
-  const city = document.getElementById('inlineFormInputName2').value;
-  const repo = await getImage(city);
-  const call = await toggleMetric('metric', city);
-  document.getElementById('inlineFormInputName2').value = '';
+  try {
+    const city = document.getElementById('inlineFormInputName2').value;
+    const repo = await getImage(city);
+    const call = await toggleMetric('metric', city);
+    document.getElementById('inlineFormInputName2').value = '';
+  } catch {
+    alert("Sorry: we couldn't find your city");
+  }
 });
-
-
-/* const searchForCity = (city) => {
-  mainLoader.style.display = 'block';
-
-  UnsplashApi.getImageBySearch(city).then((response) => {
-    mainDOM.style.backgroundImage = `url(${response.url})`;
-    mainLoader.style.display = 'none';
-    OpenWeatherApi.getWeatherByCity(city, degreeUnit).then((weather) => {
-      updateWeather(weather);
-    }).catch((err) => {
-      errorMessage.style.display = 'block';
-      errorMessage.textContent = err.message;
-    });
-  });
-}; */
 
 const getImage = async (city) => {
   let response = await unsplashApi.getImageBySearch(city);
