@@ -1,8 +1,9 @@
-import {clickFahrenheit, clickCelsius, clickSearch} from './listeners';
-import {fahrenheitButton, celsiusButton, searchButton} from './constants';
+import {eventsCaller} from './initial';
+import {searchButton} from './constants';
 
-searchButton.addEventListener('click', () => clickSearch());
+eventsCaller();
 
-fahrenheitButton.addEventListener('click', () => clickFahrenheit());
-
-celsiusButton.addEventListener('click', () => clickCelsius());
+window.onload = () => {
+  document.getElementById('inlineFormInputName2').value = 'Mexico City';
+  searchButton.click();
+}
