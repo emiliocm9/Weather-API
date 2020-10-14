@@ -7,7 +7,7 @@ const searchButton = document.getElementById('search');
 const fahrenheitButton = document.getElementById('fahrenheit');
 const celsiusButton = document.getElementById('celsius');
 const mainDOM = document.querySelector('#image-body');
-const mainICO = document.querySelector('#icon-image')
+const mainICO = document.querySelector('#icon-image');
 
 fahrenheitButton.addEventListener('click', async () => {
   const newcity = document.getElementById('city-title').textContent;
@@ -59,7 +59,8 @@ const getImage = async (city) => {
 }
 
 const setIcon = (data) => {
-  mainICO.src = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`
+  mainICO.src = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`;
+  mainICO.classList.replace('d-none', 'd-block');
 }
 
 const toggleMetric = async (metric, city) => {
@@ -80,7 +81,7 @@ const displayInfo = (data, metric) => {
   var fullSunrise = new Date(data.sys.sunrise * 1000);
   var fullSunset = new Date(data.sys.sunset * 1000);
   toggleColor(metric);
-  mainICO.src = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`
+  setIcon(data);
   document.getElementById('city-title').textContent = `${data.name}, ${data.sys.country}`;
   document.getElementById('city-temp').textContent = `${data.main.temp} ${checkMetric(metric)}`;
   document.getElementById('city-description').textContent = data.weather[0].description;

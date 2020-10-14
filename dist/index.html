@@ -8,9 +8,15 @@
   <title>Document</title>
 </head>
 <body>
+  <div class="first mx-auto mb-5">
+    <div class="search-cont d-flex">
+      <input type="text" class="form-control mr-sm-3" id="inlineFormInputName2" placeholder="City Name">
+      <button id="search" class="btn btn-secondary text-uppercase">Search</button>
+    </div>
+  </div>
   <div class="container-fluid mb-5 mt-5 d-flex align-items-center">
     <div class="card" style="width: 30%;">
-      <img id="icon-image" class="card-img-top" alt="...">
+      <img id="icon-image" class="card-img-top d-none mx-auto mt-3" alt="weather-icon">
       <div class="card-body text-center">
         <h5 class="card-title" id="city-title"></h5>
         <h5 class="card-title"><span id="city-temp"></span> <span id="city-unity"></span></h5>
@@ -40,15 +46,6 @@
       </div>
     </div>
     <div class="buttons d-flex flex-column align-items-center" style="width: 70%;">
-      <div class="first mx-auto mb-5">
-        <div class="search-cont d-flex align-items-center flex-column">
-          <form class="form-inline">
-            <label class="sr-only" for="inlineFormInputName2">Name</label>
-            <input type="text" class="form-control mb-2 mr-sm-3" id="inlineFormInputName2" placeholder="City Name">
-          </form>
-          <button id="search" class="btn btn-secondary text-uppercase">Search</button>
-        </div>
-      </div>
       <div class="second mx-auto mt-5" style="width: 80%;">
         <div class="mx-auto">
           <img id="image-body" class="mx-auto d-none" alt="City-Image">
