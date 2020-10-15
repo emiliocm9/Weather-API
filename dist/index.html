@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Document</title>
+</head>
+<body>
+  <div class="first mx-auto mb-5">
+    <div class="search-cont d-flex">
+      <input type="text" class="form-control mr-sm-3" id="inlineFormInputName2" placeholder="City Name">
+      <button type="button" id="search" class="btn btn-secondary text-uppercase">Search</button>
+    </div>
+  </div>
+  <div class="container-fluid mb-5 mt-5 d-flex align-items-center">
+    <div class="card" style="width: 30%;">
+      <img id="icon-image" class="card-img-top d-none mx-auto mt-3" alt="weather-icon">
+      <div class="card-body text-center">
+        <h5 class="card-title" id="city-title"></h5>
+        <h5 class="card-title"><span id="city-temp"></span> <span id="city-unity"></span></h5>
+        <p class="card-text text-capitalize text-info text-italic" id="city-description"></li>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Humidity: <span id="city-humidity"></span>%</li>
+        <li class="list-group-item">Pressure: <span id="city-pressure"></span>, hPa</li>
+        <li class="list-group-item">Minimum temperature: <span id="city-tempmin"></span></li>
+        <li class="list-group-item">Maximum temperature: <span id="city-tempmax"></span></li>
+      </ul>
+      <div class="card-body d-flex justify-content-around">
+        <div class="sunrise-cont d-flex flex-column text-center">
+          <h6 class="mt-3 text-secondary" id="sunrise-time"></h6>
+          <i class="far fa-sun display-4"></i>
+          <h6 class="mt-3">Sunrise</h6>
+        </div>
+        <div class="sunrise-cont d-flex flex-column text-center">
+          <h6 class="mt-3 text-secondary" id="sunset-time"></h6>
+          <i class="fas fa-sun display-4"></i>
+          <h6 class="mt-3">Sunset</h6>
+        </div>
+      </div>
+      <div class="card-body d-flex justify-content-around">
+        <button type="button" class="btn btn-secondary" id="celsius">Celsius</button>
+        <button type="button" class="btn btn-secondary" id="fahrenheit">Farenheit</button>
+      </div>
+    </div>
+    <div class="buttons d-flex flex-column align-items-center" style="width: 70%;">
+      <div class="second mx-auto mt-5" style="width: 80%;">
+        <div class="mx-auto">
+          <img id="image-body" class="mx-auto d-none" alt="City-Image">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---- Bootstrap Components ---->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <!-- FontAwesome Component -->
+  <script src="https://kit.fontawesome.com/b8f781cebc.js" crossorigin="anonymous"></script>
+
+  <script src="main.js"></script>
+</body>
+</html>

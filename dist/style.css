@@ -1,0 +1,15 @@
+#image-body {
+  width: 100%;
+  height: auto;
+}
+
+#icon-image {
+  width: 20%;
+  height: auto;
+}
+
+.first {
+  position: fixed;
+  top: 0.5rem;
+  right: 1rem;
+}
