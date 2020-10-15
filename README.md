@@ -1,7 +1,7 @@
 # Weather-APP
  JavaScript Weather APP
 
-This is a Weather Report web-page built using Webpack, JavaScript ES6 and OpenWeather API. This Weather APP allow you access current weather data for any location including over 200,000 cities. In every city you search, you will get a related image displayed on your screen, to have a deep reference of the city you are searching for.
+This is a Weather Report web-page built using Webpack, JavaScript ES6, and OpenWeather API. This Weather APP allows you to access current weather data for any location including over 200,000 cities. In every city you search, you will get a related image displayed on your screen, to have a deep reference of the city you are searching for.
 
 > This repo includes the code for the JavaScript Weather APP. User could download the code and use it to generate a new web-page with new properties as the user could want.
 
